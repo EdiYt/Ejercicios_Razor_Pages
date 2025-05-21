@@ -1,0 +1,47 @@
+﻿@page
+@model Ejercicios_Razor_Pages.Pages.programa1Model
+@{
+}
+<br />
+<h3>Aplicación que calcula el Índice de masa corporal</h3>
+<br />
+<br />
+
+<h2>Ingresa tu peso y tu altura para calcular tu Indice de Masa Corporal</h2>
+<br />
+
+<form method="post">
+    <p>Ingresa tu peso: <input type="text" asp-for="peso"/></p>
+    <p>Ingresa tu altura: <input type="text" asp-for="altura" /></p>
+    <p><input type="submit" value="Calcular" /> </p>
+</form>
+
+
+@if(Model.imc > 0){
+    <h3>Tu IMC es: @Model.imc.ToString("0.00")</h3>
+    @switch (Model.imc)
+    {
+        case float n when (n < 18):
+            <p>Peso bajo</p>
+            break;
+        case float n when (n >= 18 && n < 25):
+            <p>Peso normal</p>
+            break;
+        case float n when (n >= 25 && n < 27):
+            <p>Sobrepeso</p>
+            break;
+        case float n when (n >= 27 && n < 30):
+            <p>Obesidad grado I</p>
+            break;
+        case float n when (n >= 30 && n < 40):
+            <p>Obesidad grado II</p>
+            break;
+        case float n when (n >= 40):
+            <p>Obesidad Grado III</p>
+            break;
+        default:
+            <p></p>
+            break;
+    }
+}
+
