@@ -1,0 +1,39 @@
+﻿@page
+@model Ejercicios_Razor_Pages.Pages.programa2Model
+@{
+}
+
+<h1>Cifrado César</h1>
+<br />
+
+<form method="post">
+    <div>
+        <label for="Mensaje">Mensaje:</label>
+        <input type="text" asp-for="Mensaje" required />
+    </div>
+
+    <div>
+        <label for="Desplazamiento">Desplazamiento (n):</label>
+        <input type="number" asp-for="Desplazamiento" min="1" max="25" required />
+    </div>
+
+    <div>
+        <label>
+            <input type="radio" asp-for="Accion" value="cifrar" checked /> Cifrar
+        </label>
+        <label>
+            <input type="radio" asp-for="Accion" value="descifrar" /> Descifrar
+        </label>
+    </div>
+
+    <button type="submit">Procesar</button>
+</form>
+<br />
+
+@if (!string.IsNullOrEmpty(Model.Resultado))
+{
+    <div>
+        <h3>Resultado:</h3>
+        <p>@Model.Resultado</p>
+    </div>
+}
