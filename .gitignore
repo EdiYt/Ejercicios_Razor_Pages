@@ -1,0 +1,35 @@
+# Archivos generados por Visual Studio
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userprefs
+*.csproj.user
+*.cachefile
+
+# Archivos de compilación y publicación
+/publish/
+*.pdb
+*.exe
+*.dll
+
+# Dependencias (NuGet, npm, etc.)
+.nuget/
+packages/
+node_modules/
+bower_components/
+
+# Configuración local y secretos
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+*.secrets
+
+# Logs y archivos temporales
+*.log
+*.tmp
+
+# Editor/IDE (Visual Studio Code, Rider, etc.)
+.idea/
+.vscode/
